@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ashutosh Kumar Sonu | Portfolio</title>
+    <!-- FontAwesome icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <div class="navbar-container">
+        <nav class="navbar">
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#experience">Achievements</a>
+                <a href="#educations">Education</a>
+                <a href="#certificates">Certificates</a>
+                <a href="public/Ashutosh_CV.pdf" target="_blank">Resume</a>
+                <a href="#contact" class="nav-contact-btn">Contact</a>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Home / Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="availability-badge">
+                    <div class="availability-dot"></div>
+                    Available for opportunities
+                </div>
+                
+                <h1>Hi, I'm <br><span>Ashutosh Kumar Sonu</span></h1>
+                
+                <div class="hero-role">
+                    <i class="fa-solid fa-chart-line"></i> <span class="typing-text"></span>
+                </div>
+                
+                <p class="hero-description">
+                    A passionate student and AI enthusiast. I build cutting-edge machine learning models and dynamic data solutions that bring complex ideas to life.
+                </p>
+                
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary"><i class="fa-solid fa-list-check"></i> View Projects</a>
+                    <a href="public/Ashutosh_CV.pdf" class="btn btn-outline" download><i class="fa-solid fa-download"></i> Download CV</a>
+                </div>
+
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">4+</span>
+                        <span class="stat-label">PROJECTS</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">7.14</span>
+                        <span class="stat-label">CGPA</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">10+</span>
+                        <span class="stat-label">TOOLS</span>
+                    </div>
+                </div>
+            </div>
+            <script>
+        // Typing Effect for Hero Section
+        const phrases = ["Python Developer", "Machine Learning Engineer", "Problem Solver", "Analytical Thinker"];
+        let currentPhraseIndex = 0;
+        let currentCharIndex = 0;
+        let isDeleting = false;
+        const typingSpeed = 100;
+        const deletingSpeed = 50;
+        const delayBetweenPhrases = 2000;
+
+        function typeWriter() {
+            const typingSpan = document.querySelector('.typing-text');
+            if (!typingSpan) return;
+
+            const currentPhrase = phrases[currentPhraseIndex];
+            
+            if (isDeleting) {
+                typingSpan.textContent = currentPhrase.substring(0, currentCharIndex - 1);
+                currentCharIndex--;
+            } else {
+                typingSpan.textContent = currentPhrase.substring(0, currentCharIndex + 1);
+                currentCharIndex++;
+            }
+
+            let timeoutSpeed = isDeleting ? deletingSpeed : typingSpeed;
+
+            if (!isDeleting && currentCharIndex === currentPhrase.length) {
+                timeoutSpeed = delayBetweenPhrases;
+                isDeleting = true;
+            } else if (isDeleting && currentCharIndex === 0) {
+                isDeleting = false;
+                currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
+                timeoutSpeed = 500;
+            }
+
+            setTimeout(typeWriter, timeoutSpeed);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(typeWriter, 1000);
+        });
+    </script>
+            <div class="hero-visual">
+                <div class="floating-pill fp-1">
+                    <i class="fa-brands fa-python fp-icon bg-python"></i> Python
+                </div>
+                
+                <div class="floating-pill fp-2">
+                    <i class="fa-solid fa-database fp-icon bg-db"></i> SQL
+                </div>
+                
+                <div class="floating-pill fp-3">
+                    <i class="fa-solid fa-chart-pie fp-icon bg-chart"></i> Scikit-learn
+                </div>
+
+                <div class="code-card-wrapper">
+                    <div class="code-header">
+                        <div class="mac-buttons">
+                            <div class="mac-btn close"></div>
+                            <div class="mac-btn min"></div>
+                            <div class="mac-btn max"></div>
+                        </div>
+                        <div class="code-title">developer.py</div>
+                    </div>
+                    <div class="code-content">
+<pre><code><span class="keyword">const</span> <span class="variable">developer</span> <span class="punct">= {</span>
+    <span class="property">name</span><span class="punct">:</span> <span class="string">"Ashutosh Kumar Sonu"</span><span class="punct">,</span>
+    <span class="property">role</span><span class="punct">:</span> <span class="string">"ML Developer"</span><span class="punct">,</span>
+    <span class="property">education</span><span class="punct">:</span> <span class="string">"B.Tech CSE"</span><span class="punct">,</span>
+    <span class="property">university</span><span class="punct">:</span> <span class="string">"LPU"</span><span class="punct">,</span>
+    <span class="property">skills</span><span class="punct">: [</span>
+        <span class="string-orange">"Python"</span><span class="punct">,</span> <span class="string-orange">"SQL"</span><span class="punct">,</span>
+        <span class="string-orange">"Scikit-learn"</span><span class="punct">,</span> <span class="string-orange">"Pandas"</span>
+    <span class="punct">],</span>
+    <span class="property">available</span><span class="punct">:</span> <span class="boolean">true</span>
+<span class="punct">};</span></code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Marquee Banner -->
+    <div class="marquee-container">
+        <div class="marquee-content">
+            <!-- First Set -->
+            <div class="marquee-item"><i class="fa-solid fa-c"></i> C</div>
+            <div class="marquee-item"><i class="fa-solid fa-plus"></i> C++</div>
+            <div class="marquee-item"><i class="fa-brands fa-java"></i> Java</div>
+            <div class="marquee-item"><i class="fa-brands fa-python"></i> Python</div>
+            <div class="marquee-item"><i class="fa-solid fa-database"></i> SQL</div>
+            <div class="marquee-item"><i class="fa-solid fa-table"></i> Pandas</div>
+            <div class="marquee-item"><i class="fa-solid fa-chart-line"></i> Matplotlib</div>
+            <div class="marquee-item"><i class="fa-solid fa-brain"></i> Scikit-learn</div>
+            <div class="marquee-item"><i class="fa-solid fa-eye"></i> OpenCV</div>
+            <div class="marquee-item"><i class="fa-solid fa-bolt"></i> FastAPI</div>
+            <!-- Duplicated Set for infinite scroll -->
+            <div class="marquee-item"><i class="fa-solid fa-c"></i> C</div>
+            <div class="marquee-item"><i class="fa-solid fa-plus"></i> C++</div>
+            <div class="marquee-item"><i class="fa-brands fa-java"></i> Java</div>
+            <div class="marquee-item"><i class="fa-brands fa-python"></i> Python</div>
+            <div class="marquee-item"><i class="fa-solid fa-database"></i> SQL</div>
+            <div class="marquee-item"><i class="fa-solid fa-table"></i> Pandas</div>
+            <div class="marquee-item"><i class="fa-solid fa-chart-line"></i> Matplotlib</div>
+            <div class="marquee-item"><i class="fa-solid fa-brain"></i> Scikit-learn</div>
+            <div class="marquee-item"><i class="fa-solid fa-eye"></i> OpenCV</div>
+            <div class="marquee-item"><i class="fa-solid fa-bolt"></i> FastAPI</div>
+        </div>
+        <div class="marquee-content" style="position: absolute; left: 100%;">
+            <!-- Third Set perfectly wrapping -->
+            <div class="marquee-item"><i class="fa-solid fa-c"></i> C</div>
+            <div class="marquee-item"><i class="fa-solid fa-plus"></i> C++</div>
+            <div class="marquee-item"><i class="fa-brands fa-java"></i> Java</div>
+            <div class="marquee-item"><i class="fa-brands fa-python"></i> Python</div>
+            <div class="marquee-item"><i class="fa-solid fa-database"></i> SQL</div>
+            <div class="marquee-item"><i class="fa-solid fa-table"></i> Pandas</div>
+            <div class="marquee-item"><i class="fa-solid fa-chart-line"></i> Matplotlib</div>
+            <div class="marquee-item"><i class="fa-solid fa-brain"></i> Scikit-learn</div>
+            <div class="marquee-item"><i class="fa-solid fa-eye"></i> OpenCV</div>
+            <div class="marquee-item"><i class="fa-solid fa-bolt"></i> FastAPI</div>
+            <!-- Fourth Set -->
+            <div class="marquee-item"><i class="fa-solid fa-c"></i> C</div>
+            <div class="marquee-item"><i class="fa-solid fa-plus"></i> C++</div>
+            <div class="marquee-item"><i class="fa-brands fa-java"></i> Java</div>
+            <div class="marquee-item"><i class="fa-brands fa-python"></i> Python</div>
+            <div class="marquee-item"><i class="fa-solid fa-database"></i> SQL</div>
+            <div class="marquee-item"><i class="fa-solid fa-table"></i> Pandas</div>
+            <div class="marquee-item"><i class="fa-solid fa-chart-line"></i> Matplotlib</div>
+            <div class="marquee-item"><i class="fa-solid fa-brain"></i> Scikit-learn</div>
+            <div class="marquee-item"><i class="fa-solid fa-eye"></i> OpenCV</div>
+            <div class="marquee-item"><i class="fa-solid fa-bolt"></i> FastAPI</div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" style="background-color: white;">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge"><i class="fa-solid fa-user"></i> About Me</div>
+                <h2 class="section-title-highlight">Know Who <span>I Am</span></h2>
+                <p class="section-subtitle">A passionate Computer Science student with a focus on data analytics and turning complex data into actionable insights.</p>
+            </div>
+            
+            <div class="about-grid">
+                <div>
+                    <div class="about-image-wrapper">
+                        <img src="my_photo.jpg" alt="Ashutosh Profile" class="about-img">
+                        <div class="about-projects-badge">
+                            <h4>4+</h4>
+                            <p>Projects Done</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <h3>I'm a <span>ML Developer</span> & CS Student</h3>
+                    <p>I am a Computer Science student who enjoys working with data, artificial intelligence and solving problems. My focus is on robust machine learning analytics and presenting insights that help organizations make smarter decisions.</p>
+                    <p style="margin-bottom: 2rem;">I aim to use my analytical and problem-solving skills in a dynamic environment. I am a quick learner who enjoys challenges and always looks for opportunities to scale and grow my development capabilities.</p>
+                    
+                    <div class="about-info-grid">
+                        <div class="about-info-card">
+                            <div class="about-info-icon"><i class="fa-solid fa-envelope"></i></div>
+                            <div class="about-info-details">
+                                <h5>Email</h5>
+                                <p>ashokk40907@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="about-info-card">
+                            <div class="about-info-icon"><i class="fa-solid fa-phone"></i></div>
+                            <div class="about-info-details">
+                                <h5>Phone</h5>
+                                <p>+91 9508337061</p>
+                            </div>
+                        </div>
+                        <div class="about-info-card">
+                            <div class="about-info-icon"><i class="fa-solid fa-location-dot"></i></div>
+                            <div class="about-info-details">
+                                <h5>Location</h5>
+                                <p>India</p>
+                            </div>
+                        </div>
+                        <div class="about-info-card">
+                            <div class="about-info-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                            <div class="about-info-details">
+                                <h5>Degree</h5>
+                                <p>B.Tech CSE — LPU</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about-stats-row">
+                        <div class="about-stat-item">
+                            <div class="about-stat-number">B.Tech</div>
+                            <div class="about-stat-label">CSE Student</div>
+                        </div>
+                        <div class="about-stat-item">
+                            <div class="about-stat-number">4+</div>
+                            <div class="about-stat-label">Core Projects</div>
+                        </div>
+                        <div class="about-stat-item">
+                            <div class="about-stat-number">7.14</div>
+                            <div class="about-stat-label">CGPA Score</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Restoring Custom Additions style for remaining content layout -->
+    <style>
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 2.5rem; margin-top: 3rem;}
+        .project-card { background: white; border-radius: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid #e2e8f0; overflow: hidden; display: flex; flex-direction: column; transition: transform 0.3s;}
+        .project-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        .project-img-container { position: relative; overflow: hidden; width: 100%; height: 230px;}
+        .project-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);}
+        .project-card:hover .project-img { transform: scale(1.05); }
+        .project-overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(30, 41, 59, 0.45); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease; }
+        .project-img-container:hover .project-overlay { opacity: 1; }
+        .github-pill { background: white; color: #1e293b; font-weight: 700; font-size: 0.95rem; padding: 0.7rem 1.4rem; border-radius: 50px; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.15); transform: translateY(15px); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .project-img-container:hover .github-pill { transform: translateY(0); }
+        .github-pill:hover { background: #f1f5f9; transform: translateY(-2px) scale(1.03); }
+        .project-content { padding: 1.5rem 1.8rem; display: flex; flex-direction: column; flex-grow: 1; }
+        .project-category { font-size: 0.70rem; font-weight: 800; color: #0284c7; text-transform: uppercase; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.4rem; letter-spacing: 1px;}
+        .project-title { margin-bottom: 0.8rem; font-size: 1.35rem; font-weight: 800; color: var(--text-primary);}
+        .project-desc { font-size: 0.95rem; color: #64748b; margin-bottom: 1.5rem; line-height: 1.6; flex-grow: 1;}
+        .tags-container { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem; }
+        .tag { background: #f8fafc; padding: 0.35rem 0.8rem; border-radius: 50px; font-size: 0.75rem; font-weight: 700; color: #475569; border: 1px solid #e2e8f0;}
+        .project-footer { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 1.25rem;}
+        .project-link { font-size: 0.85rem; font-weight: 700; color: #0284c7; text-decoration: none; display: flex; align-items: center; gap: 0.4rem; }
+        .project-github { width: 32px; height: 32px; border-radius: 50%; background: #f8fafc; display: flex; justify-content: center; align-items: center; color: #475569; border: 1px solid #e2e8f0; text-decoration: none; }
+        .timeline { position: relative; max-width: 900px; margin: 3rem auto; border-left: 3px solid #e0f2fe; padding-left: 3rem; }
+        .timeline-item { margin-bottom: 3rem; position: relative; }
+        .timeline-dot { position: absolute; left: -4.05rem; top: 1.5rem; width: 36px; height: 36px; background: white; border-radius: 50%; border: 3px solid #0ea5e9; display: flex; align-items: center; justify-content: center; color: #0ea5e9; font-size: 1rem; box-shadow: 0 0 0 4px rgba(14,165,233, 0.1); transition: all 0.3s; z-index: 2; }
+        .timeline-item:hover .timeline-dot { background: #0ea5e9; color: white; box-shadow: 0 0 0 6px rgba(14,165,233, 0.2); transform: scale(1.1); }
+        .timeline-card { background: white; padding: 2.5rem; border-radius: 16px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); transition: transform 0.3s, box-shadow 0.3s; position: relative; }
+        .timeline-card::before { content: ''; position: absolute; left: -10px; top: 2rem; width: 22px; height: 22px; background: white; border-top: 1px solid #e2e8f0; border-left: 1px solid #e2e8f0; transform: rotate(-45deg); border-radius: 3px; }
+        .timeline-item:hover .timeline-card { transform: translateX(5px); box-shadow: 0 15px 30px -5px rgba(0,0,0,0.1); }
+        .timeline-date-pill { display: inline-block; background: #f8fafc; color: #0ea5e9; padding: 0.4rem 1.2rem; border-radius: 50px; font-size: 0.8rem; font-weight: 800; border: 1px solid #e0f2fe; margin-bottom: 1rem; letter-spacing: 0.5px; text-transform: uppercase; }
+        .timeline-title { font-size: 1.35rem; font-weight: 800; color: var(--text-primary); margin-bottom: 0.5rem; }
+        .timeline-desc { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.7; }
+        .skills-container { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem;}
+        .skills-category { background: white; padding: 2rem; border-radius: 12px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05); }
+        .pills-container { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem;}
+        .skill-pill { border: 1px solid #cbd5e1; padding: 0.4rem 1rem; border-radius: 50px; font-size: 0.9rem; font-weight: 500;}
+        .cert-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .cert-card { background: white; padding: 1.5rem; border-radius: 12px; border: 1px solid #e2e8f0; display: flex; align-items: center; gap: 1rem; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05);}
+        .cert-icon { font-size: 2rem; color: var(--accent-secondary); }
+    </style>
+
+    <!-- Skills Section -->
+    <section id="skills" style="background-color: #f8fafc;">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge"><i class="fa-solid fa-code"></i> Skills</div>
+                <h2 class="section-title-highlight">Professional <span>Skills</span></h2>
+                <p class="section-subtitle">My technical toolkit for transforming raw data into meaningful insights and solving logical challenges.</p>
+            </div>
+
+            <div class="skills-grid">
+                <!-- Left: Technical Expertise -->
+                <div>
+                    <h3 class="skills-column-title"><i class="fa-solid fa-laptop-code" style="color: #0284c7;"></i> Technical Expertise</h3>
+                    
+                    <h4 class="tech-subheading">Libraries & Frameworks</h4>
+                    <div class="tech-pills">
+                        <span class="tech-pill"><i class="fa-solid fa-cubes" style="color:#0ea5e9"></i> NumPy</span>
+                        <span class="tech-pill"><i class="fa-solid fa-table" style="color:#22c55e"></i> Pandas</span>
+                        <span class="tech-pill"><i class="fa-solid fa-chart-line" style="color:#eab308"></i> Matplotlib</span>
+                        <span class="tech-pill"><i class="fa-solid fa-brain" style="color:#ec4899"></i> Scikit-learn</span>
+                        <span class="tech-pill"><i class="fa-solid fa-eye" style="color:#6366f1"></i> OpenCV</span>
+                        <span class="tech-pill"><i class="fa-solid fa-bolt" style="color:#14b8a6"></i> FastAPI</span>
+                    </div>
+
+                    <h4 class="tech-subheading">Tools & Platforms</h4>
+                    <div class="tech-pills">
+                        <span class="tech-pill"><i class="fa-brands fa-git-alt" style="color:#f97316"></i> Git</span>
+                        <span class="tech-pill"><i class="fa-brands fa-github" style="color:#1e293b"></i> GitHub</span>
+                        <span class="tech-pill"><i class="fa-solid fa-code" style="color:#3b82f6"></i> VS Code</span>
+                        <span class="tech-pill"><i class="fa-solid fa-book" style="color:#f59e0b"></i> Jupyter</span>
+                        <span class="tech-pill"><i class="fa-brands fa-kaggle" style="color:#22d3ee"></i> Kaggle</span>
+                    </div>
+
+                    <h4 class="tech-subheading">Programming Languages</h4>
+                    <div class="tech-pills">
+                        <span class="tech-pill"><i class="fa-brands fa-python" style="color:#3776ab"></i> Python</span>
+                        <span class="tech-pill"><i class="fa-solid fa-c" style="color:#2563eb"></i> C</span>
+                        <span class="tech-pill"><i class="fa-solid fa-plus" style="color:#0284c7"></i> C++</span>
+                        <span class="tech-pill"><i class="fa-brands fa-java" style="color:#f59e0b"></i> Java</span>
+                        <span class="tech-pill"><i class="fa-solid fa-database" style="color:#8b5cf6"></i> SQL</span>
+                    </div>
+                </div>
+
+                <!-- Right: Professional Attributes -->
+                <div>
+                    <h3 class="skills-column-title"><i class="fa-solid fa-users-gear" style="color: #0284c7;"></i> Professional Attributes</h3>
+                    <div class="attributes-list">
+                        
+                        <div class="attribute-card">
+                            <div class="attribute-icon"><i class="fa-solid fa-puzzle-piece"></i></div>
+                            <div class="attribute-text">
+                                <h4>Problem-Solving</h4>
+                                <p>Tackling complex challenges with efficient algorithms and logical thinking.</p>
+                            </div>
+                        </div>
+
+                        <div class="attribute-card">
+                            <div class="attribute-icon"><i class="fa-solid fa-user-group"></i></div>
+                            <div class="attribute-text">
+                                <h4>Team Collaboration</h4>
+                                <p>Collaborating effectively in diverse group settings to achieve common goals and smooth operations.</p>
+                            </div>
+                        </div>
+
+                        <div class="attribute-card">
+                            <div class="attribute-icon"><i class="fa-solid fa-bullhorn"></i></div>
+                            <div class="attribute-text">
+                                <h4>Leadership & Management</h4>
+                                <p>Directing planning and execution of events, coordinating teams, and strengthening strategic impact.</p>
+                            </div>
+                        </div>
+
+                        <div class="attribute-card">
+                            <div class="attribute-icon"><i class="fa-solid fa-rotate"></i></div>
+                            <div class="attribute-text">
+                                <h4>Adaptability</h4>
+                                <p>Quickly learning new technologies and pivoting to meet project needs and industry standards.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge"><i class="fa-solid fa-folder"></i> Portfolio</div>
+                <h2 class="section-title-highlight">Featured <span>Projects</span></h2>
+                <p class="section-subtitle">A selection of recent analytical work and software systems demonstrating real-world data and machine learning skills.</p>
+            </div>
+            
+            <div class="projects-grid">
+                
+                <div class="project-card">
+                    <a href="https://github.com/ashutoshsonu8257/Seq2seq-grivence" target="_blank" style="display: block;">
+                        <div class="project-img-container">
+                            <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&q=80&w=800" alt="NLP Project" class="project-img">
+                            <div class="project-overlay">
+                                <div class="github-pill">
+                                    <i class="fa-brands fa-github"></i> View on GitHub
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="project-content">
+                        <div class="project-category"><i class="fa-solid fa-server"></i> DEEP LEARNING / NLP</div>
+                        <h3 class="project-title">Seq2Seq Grievance Routing</h3>
+                        <p class="project-desc">Fine-tuned a T5 transformer model on 15,000 grievance statements to automatically route public grievances to their respective government departments. Deployed via a high-performance FastAPI backend interface.</p>
+                        <div class="tags-container">
+                            <span class="tag">Python</span><span class="tag">Transformers</span><span class="tag">FastAPI</span><span class="tag">NLP</span>
+                        </div>
+                        <div class="project-footer">
+                            <a href="https://github.com/ashutoshsonu8257/Seq2seq-grivence" target="_blank" class="project-link">View Project <i class="fa-solid fa-arrow-right"></i></a>
+                            <a href="https://github.com/ashutoshsonu8257/Seq2seq-grivence" target="_blank" class="project-github"><i class="fa-brands fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <a href="https://github.com/ashutoshsonu8257/PlayCamCricketShotPrediction" target="_blank" style="display: block;">
+                        <div class="project-img-container">
+                            <img src="https://images.unsplash.com/photo-1543286386-2e659306cd6c?auto=format&fit=crop&q=80&w=800" alt="CV Project" class="project-img">
+                            <div class="project-overlay">
+                                <div class="github-pill">
+                                    <i class="fa-brands fa-github"></i> View on GitHub
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="project-content">
+                        <div class="project-category"><i class="fa-solid fa-video"></i> COMPUTER VISION</div>
+                        <h3 class="project-title">PlayCam - Cricket Shot Prediction</h3>
+                        <p class="project-desc">Webcam-based motion system utilizing MediaPipe to extract human pose landmarks and an LSTM temporal neural network model to classify cricket shots block by block in real-time performance.</p>
+                        <div class="tags-container">
+                            <span class="tag">MediaPipe</span><span class="tag">LSTM</span><span class="tag">OpenCV</span><span class="tag">Python</span>
+                        </div>
+                        <div class="project-footer">
+                            <a href="https://github.com/ashutoshsonu8257/PlayCamCricketShotPrediction" target="_blank" class="project-link">View Project <i class="fa-solid fa-arrow-right"></i></a>
+                            <a href="https://github.com/ashutoshsonu8257/PlayCamCricketShotPrediction" target="_blank" class="project-github"><i class="fa-brands fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <a href="https://github.com/ashutoshsonu8257/-Railway-station-congestion-Predictor--based-schedules-on-ticket-sales-and-train" target="_blank" style="display: block;">
+                        <div class="project-img-container">
+                            <img src="https://images.unsplash.com/photo-1474487548417-781cb71495f3?auto=format&fit=crop&q=80&w=800" alt="ML Project" class="project-img">
+                            <div class="project-overlay">
+                                <div class="github-pill">
+                                    <i class="fa-brands fa-github"></i> View on GitHub
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="project-content">
+                        <div class="project-category"><i class="fa-solid fa-chart-line"></i> MACHINE LEARNING</div>
+                        <h3 class="project-title">Railway Congestion Predictor</h3>
+                        <p class="project-desc">Machine learning time-series regression solution forecasting train station passenger flow to identify and generate alerts for peak congestion periods, actively optimizing local resource allocation.</p>
+                        <div class="tags-container">
+                            <span class="tag">Scikit-learn</span><span class="tag">Pandas</span><span class="tag">Matplotlib</span><span class="tag">Analytics</span>
+                        </div>
+                        <div class="project-footer">
+                            <a href="https://github.com/ashutoshsonu8257/-Railway-station-congestion-Predictor--based-schedules-on-ticket-sales-and-train" target="_blank" class="project-link">View Project <i class="fa-solid fa-arrow-right"></i></a>
+                            <a href="https://github.com/ashutoshsonu8257/-Railway-station-congestion-Predictor--based-schedules-on-ticket-sales-and-train" target="_blank" class="project-github"><i class="fa-brands fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <a href="https://github.com/ashutoshsonu8257/Ai-Code-Debugger" target="_blank" style="display: block;">
+                        <div class="project-img-container">
+                            <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&q=80&w=800" alt="AI Project" class="project-img">
+                            <div class="project-overlay">
+                                <div class="github-pill">
+                                    <i class="fa-brands fa-github"></i> View on GitHub
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="project-content">
+                        <div class="project-category"><i class="fa-solid fa-bug"></i> WEB & AI</div>
+                        <h3 class="project-title">AI Code-Debugger</h3>
+                        <p class="project-desc">Developed an intelligent web application combining web frameworks with Generative AI to automatically scan codebase segments, identify logical syntax errors, and comprehensively generate structural fixes and explanations.</p>
+                        <div class="tags-container">
+                            <span class="tag">React</span><span class="tag">Generative AI</span><span class="tag">Python</span><span class="tag">Fullstack</span>
+                        </div>
+                        <div class="project-footer">
+                            <a href="https://github.com/ashutoshsonu8257/Ai-Code-Debugger" target="_blank" class="project-link">View Project <i class="fa-solid fa-arrow-right"></i></a>
+                            <a href="https://github.com/ashutoshsonu8257/Ai-Code-Debugger" target="_blank" class="project-github"><i class="fa-brands fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience / Extracuriculars Section -->
+    <section id="experience">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge"><i class="fa-solid fa-briefcase"></i> Journey</div>
+                <h2 class="section-title-highlight">Experience & <span>Leadership</span></h2>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"><i class="fa-solid fa-star"></i></div>
+                    <div class="timeline-card">
+                        <div class="timeline-date-pill">Since Dec 2023 - Present</div>
+                        <h3 class="timeline-title">Manager and Event Head</h3>
+                        <p style="color: #64748b; font-weight: 700; font-size: 0.9rem; margin-bottom: 1rem;"><i class="fa-solid fa-building"></i> PentaOmnia</p>
+                        <p class="timeline-desc">Directed the planning and execution of heavy organizational events. Managed and coordinated team logistics, communications, and strategy to foster robust operational collaboration.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"><i class="fa-solid fa-chalkboard-user"></i></div>
+                    <div class="timeline-card">
+                        <div class="timeline-date-pill">Jun 2025 - Jul 2025</div>
+                        <h3 class="timeline-title">Training: Machine Learning Made Easy</h3>
+                        <p style="color: #64748b; font-weight: 700; font-size: 0.9rem; margin-bottom: 1rem;"><i class="fa-solid fa-graduation-cap"></i> Intensive Program</p>
+                        <p class="timeline-desc">Specialized training covering data preprocessing, supervised learning, and developing predictive pipelines. Mastered key data optimization strategies and feature engineering.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" style="background-color: #f8fafc;">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge"><i class="fa-solid fa-trophy"></i> Achievements</div>
+                <h2 class="section-title-highlight">Hackathons & <span>Achievements</span></h2>
+            </div>
+            
+            <div class="achievements-grid">
+                
+                <div class="achievement-card">
+                    <div class="achievement-icon-wrapper">
+                        <i class="fa-solid fa-fire"></i>
+                    </div>
+                    <div class="achievement-content">
+                        <h4 class="achievement-title">100 Days of Coding &mdash; Leetcode</h4>
+                        <div class="achievement-meta"><span>2024</span><span class="divider">|</span><span>Leetcode</span></div>
+                        <p class="achievement-desc">Earned a digital badge for maintaining a 100-day coding streak on Leetcode, solving various algorithmic problems.</p>
+                    </div>
+                </div>
+
+                <div class="achievement-card">
+                    <div class="achievement-icon-wrapper">
+                        <i class="fa-solid fa-code-branch"></i>
+                    </div>
+                    <div class="achievement-content">
+                        <h4 class="achievement-title">50 Days of Coding &mdash; Leetcode</h4>
+                        <div class="achievement-meta"><span>2024</span><span class="divider">|</span><span>Leetcode</span></div>
+                        <p class="achievement-desc">Successfully completed a 50-day coding challenge, demonstrating consistency and problem-solving growth.</p>
+                    </div>
+                </div>
+
+                <div class="achievement-card">
+                    <div class="achievement-icon-wrapper">
+                        <i class="fa-solid fa-users-gear"></i>
+                    </div>
+                    <div class="achievement-content">
+                        <h4 class="achievement-title">Hackathon Participant</h4>
+                        <div class="achievement-meta"><span>2023</span><span class="divider">|</span><span>Internal Event</span></div>
+                        <p class="achievement-desc">Participated in an internal hackathon, collaborating with team members to build an innovative technology solution.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Educations Section -->
+    <section id="educations">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge"><i class="fa-solid fa-graduation-cap"></i> Background</div>
+                <h2 class="section-title-highlight">My <span>Education</span></h2>
+            </div>
+
+            <div class="edu-timeline">
+                
+                <div class="edu-item">
+                    <div class="edu-dot"></div>
+                    <div class="edu-card">
+                        <div class="edu-date"><i class="fa-regular fa-calendar" style="font-size: 0.75rem;"></i> 2023 - Present</div>
+                        <h3 class="edu-title">Bachelor of Technology &mdash; CSE</h3>
+                        <p class="edu-subtitle">Lovely Professional University</p>
+                        <p class="edu-desc">Specializing in Computer Science and Engineering. Current CGPA: 7.14.</p>
+                    </div>
+                </div>
+
+                <div class="edu-item">
+                    <div class="edu-dot"></div>
+                    <div class="edu-card">
+                        <div class="edu-date"><i class="fa-regular fa-calendar" style="font-size: 0.75rem;"></i> 2020 - 2022</div>
+                        <h3 class="edu-title">Intermediate (12th)</h3>
+                        <p class="edu-subtitle">Brilliant Public School</p>
+                        <p class="edu-desc">Science stream. Percentage score: 67%.</p>
+                    </div>
+                </div>
+
+                <div class="edu-item">
+                    <div class="edu-dot"></div>
+                    <div class="edu-card">
+                        <div class="edu-date"><i class="fa-regular fa-calendar" style="font-size: 0.75rem;"></i> 2018 - 2019</div>
+                        <h3 class="edu-title">Matriculation (10th)</h3>
+                        <p class="edu-subtitle">D.A.V Public School, Jehanabad</p>
+                        <p class="edu-desc">Completed secondary education. Percentage score: 86%.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Resume Section -->
+    <section id="resume" class="resume-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge"><i class="fa-solid fa-file-pdf"></i> Resume</div>
+                <h2 class="section-title-highlight">My <span>Resume</span></h2>
+                <p class="section-subtitle" style="max-width: 600px; margin: 0 auto 1.5rem;">Download my full professional resume to view a complete breakdown of my experience and qualifications.</p>
+            </div>
+
+            <div class="resume-card">
+                <div class="pdf-icon-box">
+                    <i class="fa-solid fa-file-pdf"></i>
+                </div>
+                <h3>Ashutosh Kumar Sonu — Resume</h3>
+                <p style="font-family: 'Fira Code', monospace; color: #94a3b8; font-size: 0.85rem;">PDF Document • Ashutosh_CV.pdf</p>
+                <div class="resume-actions">
+                    <a href="Ashutosh_CV.pdf" class="resume-btn btn-view" target="_blank">
+                        <i class="fa-regular fa-eye"></i> View Resume
+                    </a>
+                    <a href="publicAshutosh_CV.pdf" class="resume-btn btn-download" download>
+                        <i class="fa-solid fa-download"></i> Download
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" style="padding: 100px 0;">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge"><i class="fa-solid fa-paper-plane"></i> Contact</div>
+                <h2 class="section-title-highlight">Get In <span>Touch</span></h2>
+                <p class="section-subtitle" style="max-width: 600px; margin: 0 auto 1.5rem;">Available for compelling analytical challenges and opportunities. Let's connect!</p>
+            </div>
+
+            <div class="contact-grid">
+                <!-- Email -->
+                <a href="mailto:ashokk40907@gmail.com" class="contact-card">
+                    <div class="contact-icon-box">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <h4>Email</h4>
+                    <p>ashokk40907@gmail.com</p>
+                </a>
+
+                <!-- Mobile -->
+                <div class="contact-card">
+                    <div class="contact-icon-box">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <h4>Mobile</h4>
+                    <p>+91 9508337061</p>
+                </div>
+
+                <!-- LinkedIn -->
+                <a href="https://linkedin.com/in/ashutoshsonu25" target="_blank" class="contact-card">
+                    <div class="contact-icon-box">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </div>
+                    <h4>LinkedIn</h4>
+                    <p>Connect Professionally</p>
+                </a>
+
+                <!-- GitHub -->
+                <a href="https://github.com/ashutoshsonu8257" target="_blank" class="contact-card">
+                    <div class="contact-icon-box">
+                        <i class="fa-brands fa-github"></i>
+                    </div>
+                    <h4>GitHub</h4>
+                    <p>View Repositories</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
